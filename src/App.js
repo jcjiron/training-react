@@ -3,6 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props){
+    super(props)
+
+    this.daleDonDale = this.daleDonDale.bind(this);
+  }
+
+
+
   render() {
     return (
       <div className="App">
@@ -11,6 +20,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload
           </p>
+          <button className="btn btn-primary" onClick={this.daleDonDale}>Hello</button>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -22,6 +32,10 @@ class App extends Component {
         </header>
       </div>
     );
+  }
+
+  daleDonDale(event){
+    console.log(event);
   }
 }
 
