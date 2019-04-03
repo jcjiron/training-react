@@ -3,23 +3,45 @@ import React, { Component } from 'react';
 
 class Heroe extends Component {
 
+    state = {
+        heroe: {}
+    }
+
     constructor(props) {
         super(props);
-        console.log(props);
-        
-
-
     }
+
+    componentWillMount() {
+        this.setState({
+            heroe: this.props.data
+        });
+    }
+
 
     render() {
         return (
             <div className="card">
-                <img src="..." className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                <h1 className="">{this.state.heroe.nombre} <small>({this.state.heroe.aparicion})</small></h1>
+                <hr />
+                <div className="row">
+                    <div className="col-md-4">
+                        <img src={this.state.heroe.img} className="img-fluid" alt="" />
+                        <br /><br /><br />
+                        <a href="" className="btn btn-outline-danger btn-block">Regresar</a>
+                    </div>
+                    <div className="col-md-8">
+                        <h3>{this.state.heroe.nombre}</h3>
+                        <hr />
+                        <p>
+                            {this.state.heroe.bio}
+                         </p>
+                        <div>
+                            <img className="img-logo" src="../assets/img/marvel-logo.png" alt="DC" />
+                            <img src="../assets/img/dc-logo.jpg" alt="Marvel" />
+                        </div>
+                    </div>
                 </div>
+
             </div>
         );
     }

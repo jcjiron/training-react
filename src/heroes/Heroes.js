@@ -63,11 +63,10 @@ class Heroes extends Component{
         return(
             <div className="container">
                 <div className="card-group">
-                    <Heroe data={this.heroes} />
+                    {this.heroes.map(heroe => <Heroe data={heroe} />)}
                 </div>
             </div>
-        );
-    }
+        )};
 
 }
 
