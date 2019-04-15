@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import dc_logo from '../assets/img/dc-logo.jpg';
+import marvel_logo from '../assets/img/marvel-logo.png';
+import './Heroe.css';
+
 
 class Heroe extends Component {
 
@@ -11,10 +15,11 @@ class Heroe extends Component {
         super(props);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
+            // heroe: this.props.data
             heroe: this.props.data
-        });
+        });        
     }
 
 
@@ -25,7 +30,7 @@ class Heroe extends Component {
                 <hr />
                 <div className="row">
                     <div className="col-md-4">
-                        <img src={this.state.heroe.img} className="img-fluid" alt="" />
+                        <img src={`../${this.state.heroe.img}`} className="img-fluid" alt="" />
                         <br /><br /><br />
                         <a href="" className="btn btn-outline-danger btn-block">Regresar</a>
                     </div>
@@ -37,13 +42,18 @@ class Heroe extends Component {
                          </p>
                         <div>
                             <img className="img-logo" src="../assets/img/marvel-logo.png" alt="DC" />
-                            <img src="../assets/img/dc-logo.jpg" alt="Marvel" />
+                            <img src={this.state.heroe.casa === 'DC' ? dc_logo : marvel_logo } alt="Marvel" className="Heroe-logo"/>
                         </div>
                     </div>
                 </div>
 
             </div>
         );
+    }
+
+    getSnapshotBeforeUpdate(){
+        console.log(this.state);
+        
     }
 
 

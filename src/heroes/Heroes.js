@@ -63,7 +63,8 @@ class Heroes extends Component{
         return(
             <div className="container">
                 <div className="card-group">
-                    {this.heroes.map(heroe => <Heroe data={heroe} />)}
+                        {this.heroes.map((heroe, i) => <Heroe key={i} data={heroe} />)}
+
                 </div>
             </div>
         )};
