@@ -3,3 +3,24 @@
 .Heroe-logo{
     width: 32px;
 }
+
+.Heroe-card{
+    max-height: 460px;
+    overflow: hidden;
+}
+
+.Heroe-bio{
+
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  height: 109.2px; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: 26px;
+  line-height: 1.4;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
